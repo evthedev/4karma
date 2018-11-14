@@ -1,0 +1,59 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./variables.scss";
+
+/**
+* General
+*/
+
+h1 {
+    font-size: 35px;
+}
+
+a {
+    color: $primary-color;
+}
+
+/**
+* Navigation
+*/
+
+.navbar {
+    &__wrapper {
+        flex: 1 1 100%;
+    }
+}
+
+
+/**
+* Page Elements
+*/
+
+
+/**
+* Pages - Home
+*/
+
+
+/**
+* Pages - Login
+*/
+
+
+/**
+* Pages - Search
+*/
+
+
+/**
+* Pages - Report
+*/
+
+
+/**
+* Pages - Documentation
+*/
+
+
+/**
+* Footer
+*/
