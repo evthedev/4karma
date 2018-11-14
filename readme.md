@@ -47,7 +47,7 @@ $ npm start
 ---
 ## Your assignment
 
-There are 5 pages that need styling in `/src/views`. The template designs are really quite simple, (as you'll see in the mocks) there's a nav, body and footer.
+There are 5 pages that need styling in `/src/views`. The template designs are really quite simple, (as you'll see in the mocks) there's a nav, body and footer. Download the mocks here https://drive.google.com/drive/folders/1CDTlVXKdnjXQITP_hNmFsbh7_8n8xp8y?usp=sharing
 
 The body section is unique to each page, so you'll make body-related changes in the views files themselves.
 
