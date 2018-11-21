@@ -1,9 +1,19 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./variables.scss";
 
+
 /**
 * General
 */
+
+body {
+    font-family: $primary-font;
+    color: $body-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $secondary-font;
+}
 
 h1 {
     font-size: 35px;
@@ -21,6 +31,12 @@ a {
     &__wrapper {
         flex: 1 1 100%;
     }
+}
+
+.nav-link {
+    font-family: $secondary-font;
+    font-size: 15px;
+    text-transform: uppercase;
 }
 
 
