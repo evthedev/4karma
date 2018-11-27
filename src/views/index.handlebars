@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Login</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
+	{{> ../partials/head}}
+	<body>
 
-	<!--[if lt IE 7]>
-		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-	{{> ../partials/nav}}
-	<div class="container">
-		<h1>Login</h1>
-	</div>
-	{{> ../partials/footer}}
-
-</body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<div class="body__container h-100">
+			<div class="container h-100">
+				<div class="row h-100 my-auto align-items-center">
+					<div class="login__wrapper col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3">
+						<div class="row justify-content-center">
+							<div class="col-8 col-md-6">
+								<img src="../src/images/logo.png" class="img-fluid logo" alt="logo">
+							</div>
+						</div>
+						<form>
+							<input type="text" name="username" class="input" id="username" required />
+							<label for="username"><span>Username</span></label>
+							<input type="text" name="password" class="input" id="username" required />
+							<label for="password"><span>Password</span></label>
+							<input type="submit" class="mt-4" value="Login" />
+						</form>
+					</div>
+				</div>
+			</div>
+			{{> ../partials/footer}}
+		</div>
+	</body>
 </html>

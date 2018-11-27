@@ -1,18 +1,22 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./variables.scss";
 
-
 /**
 * General
 */
 
 body {
-    font-family: $primary-font;
+    font-family: $secondary-font;
     color: $body-color;
 }
 
+body, html {
+    height: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
-    font-family: $secondary-font;
+    font-family: $primary-font;
+    line-height: 1.6
 }
 
 h1 {
@@ -21,6 +25,9 @@ h1 {
 
 a {
     color: $primary-color;
+    &:hover, &:focus, &:active {
+        color: $secondary-color;
+    }
 }
 
 /**
@@ -31,19 +38,253 @@ a {
     &__wrapper {
         flex: 1 1 100%;
     }
+    &__logo--wrapper {
+        flex: 1;
+        .logo {
+            max-width: 150px;
+            margin-bottom: 0;
+        }
+    }
+    &__menu {
+        flex: 5;
+    }
+    &-toggler {
+        position: absolute;
+        right: 0;
+        top: 15px;
+        outline: 0;
+        &.collapsed {
+            .collapsed {
+                visibility: visible;
+                opacity: 1;
+            }
+            .expanded {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+        .collapsed {
+            visibility: hidden;
+            opacity: 0;
+        }
+        .expanded {
+            visibility: visible;
+            opacity: 1;
+        }
+        &-icon {
+            transition: opacity .3s ease-in-out;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        &:focus {
+            outline: 0;
+        }        
+    }
 }
 
 .nav-link {
-    font-family: $secondary-font;
+    font-family: $primary-font;
     font-size: 15px;
     text-transform: uppercase;
+    position: relative;
+    &.active {
+        color: $secondary-color;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        right: 50%;
+        height: 2px;
+        background-color: $secondary-color;
+        display: block;
+        transition: left 0.1s cubic-bezier(.03,.27,.45,1), right 0.1s cubic-bezier(.03,.27,.45,1);
+        
+    }
+    &:hover, &:focus, &:active, &.active {
+        &:after {
+            left: 0;
+            right: 0;
+        }
+    }
 }
 
 
 /**
-* Page Elements
+* Common Page Elements
 */
 
+ul {
+    padding-left: 0;
+    li {
+        line-height: 2;
+        &.download {
+            list-style: none;
+            padding-left: 22px;
+            position: relative;
+            &:before {
+                content: "\f1c1";
+                color: $red;
+                font-family: "Font Awesome 5 Free";
+                position: absolute;
+                top: 0;
+                left: 2px;
+            }
+        }
+    }
+}
+
+// Forms 
+input,
+span,
+label,
+textarea {
+    display: block;
+    margin: 10px;
+    border: none;
+    font-size: $secondary-font-size;
+}
+
+
+textarea:focus,
+input:focus {
+    outline: 0;
+}
+
+input, textarea {
+    &.input {
+        font-size: $secondary-font-size;
+        font-weight: 300;
+        border-radius: 2px;
+        margin: 0;
+        border: none;
+        width: 100%;
+        background: rgba(0, 0, 0, 0);
+        transition: padding-top 0.2s ease, margin-top 0.2s ease;
+        overflow-x: hidden;
+        padding: 29px 0 6px;
+        /* Hack to make "rows" attribute apply in Firefox. */
+        &+label {
+            display: block;
+            position: relative;
+            white-space: nowrap;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 1px;
+            width: 100%;
+            opacity: 0.7;
+            border-top: 1px solid $gray;
+            height: 0px;
+            cursor: auto;
+            z-index: 1;
+            &>span {
+                font-weight: 300;
+                margin: 0;
+                position: absolute;
+                color: #8F8F8F;
+                font-size: $secondary-font-size;
+                top: -37px;
+                left: 0px;
+                z-index: -1;
+                -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+                transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+            }
+        }
+        &.focused {
+            &+label {
+                opacity: 1;
+                border-top: 2px solid $primary-color;
+                margin-bottom: 0;
+            }
+        }
+        &.focused {
+            &+label {
+                &>span {
+                    top: -60px;
+                    font-size: $primary-font-size;
+                    color: #8F8F8F;
+                }
+            }
+        }
+        &:invalid {
+            box-shadow: none;
+        }
+    }
+}
+
+textarea {
+    min-height: 168px;
+    &.input {
+        &+label {
+            &>span {
+                top: -140px;
+            }
+        }
+        &.focused {
+            &+label {
+                &>span {
+                    top: -165px;
+                }
+            }
+        }
+    }
+}
+
+
+input[type="submit"] {
+    transition: opacity 0.2s ease, background 0.2s ease;
+    display: block;
+    opacity: 1;
+    margin: 10px 0 0 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: $primary-color;
+    color: $white;
+    border-radius: 2px;
+    &:hover, &:active {
+        background:$light;
+        color: $primary-color;
+    }
+}
+
+.body {
+    &__container {
+        padding-bottom: 100px;
+        position: relative;
+        min-height: 100vh;
+    }
+}
+
+footer {
+    &.navbar {
+        position: absolute;
+        height: 100px;
+        bottom: 0;   
+    }
+    .logo {
+        filter: invert(1);
+        margin-bottom: 0;
+    }
+    .footer {
+        &__copyright {
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+    }
+}
+
+.page {
+    &__content {
+        padding-top: 32px;
+        padding-bottom: 64px;
+    }
+}
+
+.icon {
+    color: $primary-color;
+}
 
 /**
 * Pages - Home
@@ -54,6 +295,15 @@ a {
 * Pages - Login
 */
 
+.login {
+    &__wrapper {
+        margin-bottom: 70px;
+    }
+}
+
+.logo {
+    margin-bottom: 20px;
+}
 
 /**
 * Pages - Search
@@ -73,3 +323,16 @@ a {
 /**
 * Footer
 */
+
+
+/**
+* Responsive
+*/
+
+@media (max-width: $breakpoint-sm) {
+    .nav-link {
+        &:after {
+            content: none;
+        }
+    }
+}

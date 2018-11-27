@@ -1,10 +1,24 @@
 /**
 * Set variables here. This can be very helpful especially for values that get reused across the site
 */
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300|Ubuntu');
 
-$primary-font: 'Montserrat', sans-serif;
-$secondary-font: 'Roboto Slab', serif;
+$primary-font: 'Ubuntu', sans-serif;
+$secondary-font: 'Roboto', serif;
 
-$primary-color: var(--indigo); // var(--indigo) is defined using CSS variables in the default bootstrap package, along with a bunch of other colours
+$primary-color: var(--indigo);
+$secondary-color: var(--cyan);
 $body-color: var(--dark);
+$white: var(--white);
+$light: var(--light);
+$gray: var(--gray);
+$red: var(--red);
+
+$primary-font-size: 15px;
+$secondary-font-size: 18px;
+
+$breakpoint-xs: var(--breakpoint-xs);
+$breakpoint-sm: var(--breakpoint-sm);
+$breakpoint-md: var(--breakpoint-md);
+$breakpoint-lg: var(--breakpoint-lg);
+$breakpoint-xlg: var(--breakpoint-xlg);

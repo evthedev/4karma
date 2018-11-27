@@ -1,20 +1,41 @@
 <!DOCTYPE html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Home</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-
-	<!--[if lt IE 7]>
-		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-	{{> ../partials/nav}}
-	<div class="container">
-		<h1>Home</h1>
-	</div>
-	{{> ../partials/footer}}
-
-</body>
+	{{> ../partials/head}}
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<div class="body__container">
+			{{> ../partials/nav}}
+			<div class="container h-100">
+				<div class="row">
+					<div class="col-12 col-sm-9 col-md-8">
+						<div class="pt-5 mb-5">
+							<h4>YOUR RESULTS</h4>
+							<p>Bookings checked: (active numbers from their account)</p>
+							<p>Warnings checked: (active numbers from their account)</p>
+							<p>Guests reported: (active numbers from their account)</p>
+							<br/>
+							<h4>LATEST</h4>
+							<p>(Need to be able to write here: 'text only') </p>
+							<br/>
+							<h4>REPORT OF THE WEEK</h4>
+							<p>(Need to be able to write here: 'text only') </p>
+							<br/>
+						</div>
+					</div>
+					<div class="col-12 col-sm-3 col-md-4">
+						<div class="pt-5 mb-5">
+							<div class="card">
+								<div class="card-body">
+									<h4 class="card-title">ADVERTISING SPACE</h4>
+									<h6 class="card-subtitle mb-2 text-muted">Need to be able to turn this on and off + customise content</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{> ../partials/footer}}
+		</div>
+	</body>
 </html>

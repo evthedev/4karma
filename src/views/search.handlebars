@@ -1,20 +1,55 @@
 <!DOCTYPE html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Search</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-
-	<!--[if lt IE 7]>
-		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-	{{> ../partials/nav}}
-	<div class="container">
-		<h1>Search</h1>
-	</div>
-	{{> ../partials/footer}}
-
-</body>
+	{{> ../partials/head}}
+	<body>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<div class="body__container">
+			{{> ../partials/nav}}
+			<div class="container h-100">
+				<div class="row">
+					<div class="col-12">
+						<div class="pt-5 mb-5">
+							<h4>Guest's Details</h4>
+							<form>
+								<div class="form__body mb-3">
+									<div class="row">
+										<div class="col-12 col-sm-6 col-md-4">
+											<input type="text" name="firstname" class="input" id="firstname" autocomplete="off"/>
+											<label for="firstname"><span>First name</span></label>
+										</div>
+										<div class="col-12 col-sm-6 col-md-4">
+											<input type="text" name="lastname" class="input" id="lastname" autocomplete="off"/>
+											<label for="lastname"><span>Last name</span></label>
+										</div>
+										<div class="col-12 col-sm-6 col-md-4">
+											<input type="text" name="postcode" class="input" id="postcode" autocomplete="off"/>
+											<label for="postcode"><span>Postcode</span></label>
+										</div>
+										<div class="col-12 col-sm-6 col-md-4">
+											<input type="text" name="email" class="input" id="email" autocomplete="off"/>
+											<label for="email"><span>Email Address</span></label>
+										</div>
+										<div class="col-12 col-sm-6 col-md-4">
+											<input type="text" name="mobile" class="input" id="mobile" autocomplete="off"/>
+											<label for="mobile"><span>Mobile Number</span></label>
+										</div>
+									</div>
+								</div>
+								<div class="form__submit">
+									<div class="row">
+										<div class="col-12 col-sm-7">
+											<small>By clicking search you agree that you have read and understood 4Karma's Terms and Conditions Of Use, Membership Agreement and Privacy Policy. Full details can be found under <a href="./documentation.html"><strong>Documentation</strong></a></small>
+										</div>
+									</div>
+									<input type="submit" value="Search" class="mt-4"/>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{> ../partials/footer}}
+		</div>
+	</body>
 </html>
